@@ -225,5 +225,7 @@ rowMeans(MSEmatrix) #use alpha = .8 or .9
 model = cv.glmnet(x.all, y.all,family="gaussian", type.measure="mse",alpha=.8,nfolds=100) 
 coef(model,s=model$lambda.min) #coefficients for model
 
-yhat = predict(model,s=model$lambda.min,newx=x.all)
+model.lambda = model$lambda.min
+yhat = predict(model,s=model.lambda,newx=x.all)
 plot(yhat,y.all) #predicted vs actual
+cor(yhat,y.all) #correlation between predicted and actual 

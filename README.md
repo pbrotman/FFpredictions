@@ -6,3 +6,5 @@ Play-by-play is scraped using R library nflscrapR. Betting lines data from Kaggl
 
 Predictions on new data can be made using:
 > predict(model,s=model.lambda,newx=NEWDATA)
+
+The correlation between predicted and actual scores is .36, and the MSE is 41.35. 
